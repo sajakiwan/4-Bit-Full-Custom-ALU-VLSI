@@ -152,3 +152,50 @@ The analysis included:
 ## Skills Demonstrated
 
 Full-Custom VLSI • CMOS Design • Digital IC Design • Physical Layout • Physical Verification • DRC • LVS • PEX • Circuit Simulation • Timing Analysis • Statistical Verification • Monte Carlo Analysis • PVT Analysis • PPA Analysis • Power Analysis • Robustness Analysis
+
+## Project Results & Verification
+
+### 1. 1-Bit ALU – Schematic & Full-Custom Layout
+The 1-bit ALU was implemented hierarchically, integrating the arithmetic unit, logic unit, and selection circuitry. Both the schematic and corresponding full-custom physical layout are shown below.
+
+![1-Bit ALU Schematic and Layout](1-bit%20ALU%20Schematic%20-%20Layout.jpg)
+
+
+### 2. Final 4-Bit ALU Full-Custom Layout
+The complete 4-bit ALU was constructed by integrating four 1-bit ALU cells into the final hierarchical physical implementation.
+
+![Final 4-Bit ALU Layout](alu4-final-layout.jpg)
+
+
+### 3. Physical Verification – DRC & LVS
+The final 4-bit ALU layout was verified using Design Rule Check (DRC) and Layout Versus Schematic (LVS), confirming compliance with physical design rules and consistency between the schematic and layout.
+
+![DRC and LVS Verification](alu4-DRC-LVS-clean.jpg)
+
+
+### 4. Monte Carlo & Critical-Path Timing Analysis
+Monte Carlo analysis was used to evaluate timing robustness under process and mismatch variations. The B0 → Y0 falling transition during Signed SLT showed the highest statistical timing sensitivity among the analyzed paths.
+
+![Monte Carlo SLT Delay](monte-carlo-slt-delay.jpg)
+
+The design completed 200/200 Monte Carlo runs successfully, corresponding to 100% yield under the evaluated conditions.
+
+
+### 5. PRE-Layout vs. POST-Layout – Timing, Power & PPA Analysis
+Pre-layout and post-layout results were compared to evaluate the impact of extracted parasitics on propagation delay and circuit performance. The analysis includes critical timing paths, power consumption, and Power-Delay Product (PDP).
+
+![PRE vs POST PPA Summary](alu4-pre-post-ppa-summary.jpg)
+
+
+### 6. PVT Corner Verification – TT, SS & FF
+The 4-bit ALU was evaluated across Process, Voltage, and Temperature conditions to verify functional and timing robustness at Typical, Slow, and Fast process corners.
+
+![PVT Corner Verification](alu4-pvt-corners.jpg)
+
+![FF PVT Corner](alu4-pvt-ff-corner.jpg)
+
+
+### 7. Additional PRE-Layout vs. POST-Layout Functional Verification – SUB
+The subtraction operation was compared before and after parasitic extraction. Functional behavior remained correct following the transition from the schematic-level design to the extracted post-layout implementation.
+
+![PRE vs POST SUB Analysis](pre-post-sub-analysis.jpg)

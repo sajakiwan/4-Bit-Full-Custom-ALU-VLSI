@@ -156,10 +156,9 @@ Full-Custom VLSI • CMOS Design • Digital IC Design • Physical Layout • P
 ## Project Results & Verification
 
 ### 1. 1-Bit ALU – Schematic & Full-Custom Layout
-The 1-bit ALU was implemented hierarchically, integrating the arithmetic unit, logic unit, and selection circuitry. Both the schematic and corresponding full-custom physical layout are shown below.
+The 1-bit ALU was implemented hierarchically, integrating the arithmetic unit, logic unit, and selection circuitry. The figure shows both the schematic and its corresponding full-custom physical layout.
 
-![1-Bit ALU Schematic and Layout](1-bit%20ALU%20Schematic%20-%20Layout.jpg)
-
+![1-Bit ALU Schematic and Layout](alu1-schematic-layout.jpeg)
 
 ### 2. Final 4-Bit ALU Full-Custom Layout
 The complete 4-bit ALU was constructed by integrating four 1-bit ALU cells into the final hierarchical physical implementation.
@@ -168,34 +167,26 @@ The complete 4-bit ALU was constructed by integrating four 1-bit ALU cells into 
 
 
 ### 3. Physical Verification – DRC & LVS
-The final 4-bit ALU layout was verified using Design Rule Check (DRC) and Layout Versus Schematic (LVS), confirming compliance with physical design rules and consistency between the schematic and layout.
+The final 4-bit ALU layout was verified using Design Rule Check (DRC) and Layout Versus Schematic (LVS), confirming compliance with physical design rules and consistency between the schematic and physical layout.
 
 ![DRC and LVS Verification](alu4-DRC-LVS-clean.jpg)
 
 
 ### 4. Monte Carlo & Critical-Path Timing Analysis
-Monte Carlo analysis was used to evaluate timing robustness under process and mismatch variations. The B0 → Y0 falling transition during Signed SLT showed the highest statistical timing sensitivity among the analyzed paths.
+Monte Carlo analysis was performed to evaluate timing robustness under process and mismatch variations. The B0 → Y0 falling transition during Signed SLT showed the highest statistical timing sensitivity among the analyzed paths.
+
+The design successfully completed 200/200 Monte Carlo runs, corresponding to 100% yield under the evaluated conditions.
 
 ![Monte Carlo SLT Delay](monte-carlo-slt-delay.jpg)
 
-The design completed 200/200 Monte Carlo runs successfully, corresponding to 100% yield under the evaluated conditions.
-
 
 ### 5. PRE-Layout vs. POST-Layout – Timing, Power & PPA Analysis
-Pre-layout and post-layout results were compared to evaluate the impact of extracted parasitics on propagation delay and circuit performance. The analysis includes critical timing paths, power consumption, and Power-Delay Product (PDP).
+Pre-layout and post-layout results were compared to evaluate the impact of extracted parasitics on circuit performance. The analysis includes propagation delay across multiple critical paths, average power consumption, and Power-Delay Product (PDP).
 
-![PRE vs POST PPA Summary](alu4-pre-post-ppa-summary.jpg)
-
-
-### 6. PVT Corner Verification – TT, SS & FF
-The 4-bit ALU was evaluated across Process, Voltage, and Temperature conditions to verify functional and timing robustness at Typical, Slow, and Fast process corners.
-
-![PVT Corner Verification](alu4-pvt-corners.jpg)
-
-![FF PVT Corner](alu4-pvt-ff-corner.jpg)
+![PRE vs POST PPA Analysis](alu4-pvt-corners.jpg)
 
 
-### 7. Additional PRE-Layout vs. POST-Layout Functional Verification – SUB
-The subtraction operation was compared before and after parasitic extraction. Functional behavior remained correct following the transition from the schematic-level design to the extracted post-layout implementation.
+### 6. PVT Verification – Fast Corner
+As part of the Process, Voltage, and Temperature analysis, the design was evaluated at the Fast (FF) corner under the corresponding voltage and temperature conditions, confirming correct operation.
 
-![PRE vs POST SUB Analysis](pre-post-sub-analysis.jpg)
+![PVT FF Corner](alu4-pvt-ff-corner.jpg)

@@ -158,7 +158,7 @@ Full-Custom VLSI • CMOS Design • Digital IC Design • Physical Layout • P
 ### 1. 1-Bit ALU – Schematic & Full-Custom Layout
 The 1-bit ALU was implemented hierarchically, integrating the arithmetic unit, logic unit, and selection circuitry. The figure shows both the schematic and its corresponding full-custom physical layout.
 
-[alu1-schematic-layout.jpg](alu1-schematic-layout.jpg)
+![1-Bit ALU – Schematic & Full-Custom Layout](1-bit-alu-schematic-layout.jpg)
 
 ### 2. Final 4-Bit ALU Full-Custom Layout
 The complete 4-bit ALU was constructed by integrating four 1-bit ALU cells into the final hierarchical physical implementation.
